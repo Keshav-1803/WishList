@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-top: 15%;
+  background-color: #08aeea;
+  background-image: linear-gradient(
+    180deg,
+    #3ca9b0 0%,
+    #3e6da5 20.47%,
+    #52619c 35.52%,
+    #655a94 44.12%,
+    #745591 52.15%,
+    #ac518c 63.19%,
+    #b8538d 69.36%,
+    #cb7d94 83.26%,
+    #e6c88c 100%
+  );
+
+  box-shadow:
+    0px 0px 10px rgba(0, 0, 0, 0.7),
+    2px 4px 8px rgba(0, 0, 0, 0.5),
+    4px 8px 6px rgba(0, 0, 0, 0.3),
+    6px 10px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-title {
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-input {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.lab {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.input-field {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.update-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.clear-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.data-list {
+  margin-top: 20px;
+}
+
+.data-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.data-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.remove-btn {
+  padding: 4px 8px;
+  font-size: 14px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

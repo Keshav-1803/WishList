@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import UserInput from "./components/UserInput";
+import Data from "./components/Data";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const [wishlist, setWishlist] = useState([]);
+
+  const addToWishlist = (item) => {
+    const trimmedItem = item.trim();
+
+    if (!trimmedItem) {
+      alert("Cannot add an empty wish to the wishlist.");
+      return;
+    }
+
+    setWishlist([...wishlist, trimmedItem]);
+  };
+
+  const removeFromWishlist = (index) => {
+    const updatedWishlist = wishlist.filter((_, i) => i !== index);
+    setWishlist(updatedWishlist);
+  };
+
+  const clearAll = () => {
+    setWishlist([]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <div className="app-container">
+        <h1 className="app-title">My Wishlist App</h1>
+        <UserInput addToWishlist={addToWishlist} clearAll={clearAll} />
+        <Data wishlist={wishlist} removeFromWishlist={removeFromWishlist} />
+      </div>
     </div>
   );
 }
-
-export default App;
